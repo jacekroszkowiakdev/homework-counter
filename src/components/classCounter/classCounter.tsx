@@ -1,11 +1,11 @@
 import { Component } from "react";
 
-type ClassCounterStateProps = {
+interface ClassCounterState {
     classCount: number;
-};
+}
 
-export class ClassCounter extends Component<ClassCounterStateProps> {
-    constructor(props: ClassCounterStateProps) {
+export class ClassCounter extends Component {
+    constructor(props: ClassCounterState) {
         super(props);
         this.state = {
             classCount: 0,
@@ -14,21 +14,19 @@ export class ClassCounter extends Component<ClassCounterStateProps> {
         // this.handleIncrement = this.handleIncrement.bind(this);
     }
 
-    state: ClassCounterStateProps = {
+    state: ClassCounterState = {
         classCount: 0,
     };
 
-    count = this.state.classCount;
-
     handleIncrement = () => {
-        this.setState((prevState: ClassCounterStateProps) => ({
-            count: prevState.classCount + 1,
+        this.setState((prevState: ClassCounterState) => ({
+            classCount: prevState.classCount + 1,
         }));
     };
 
     handleDecrement = () => {
-        this.setState((prevState: ClassCounterStateProps) => ({
-            count: prevState.classCount - 1,
+        this.setState((prevState: ClassCounterState) => ({
+            classCount: prevState.classCount - 1,
         }));
     };
 
@@ -36,7 +34,7 @@ export class ClassCounter extends Component<ClassCounterStateProps> {
         return (
             <>
                 <h2>Class Counter Example:</h2>
-                <div>{this.count}</div>
+                <div>{this.state.classCount}</div>
                 <button onClick={this.handleIncrement.bind(this)}>+</button>
                 <button onClick={this.handleDecrement.bind(this)}>-</button>
             </>

@@ -6,7 +6,7 @@ function App() {
     return (
         <>
             <FnCounter />
-            <ClassCounter classCount={0} />
+            <ClassCounter />
         </>
     );
 }
