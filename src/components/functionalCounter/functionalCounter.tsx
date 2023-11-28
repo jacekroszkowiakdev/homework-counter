@@ -3,11 +3,11 @@ import { useState } from "react";
 export const FnCounter: React.FC = () => {
     const [countFn, setCount] = useState(0);
     const handleIncrement = () => {
-        setCount((countFn) => countFn + 1);
+        setCount((countFn) => ++countFn);
     };
 
     const handleDecrement = () => {
-        setCount((countFn) => countFn - 1);
+        setCount((countFn) => --countFn);
     };
 
     return (
