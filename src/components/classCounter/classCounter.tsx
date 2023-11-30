@@ -19,13 +19,9 @@ export class ClassCounter extends Component {
     };
 
     handleIncrement = () => {
-        if (this.state.classCount > 0) {
-            this.setState((prevState: ClassCounterState) => ({
-                classCount: prevState.classCount + 1,
-            }));
-        } else {
-            alert("Count cannot be negative.");
-        }
+        this.setState((prevState: ClassCounterState) => ({
+            classCount: prevState.classCount + 1,
+        }));
     };
 
     handleDecrement = () => {

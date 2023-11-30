@@ -4,11 +4,7 @@ export const FnCounter: React.FC = () => {
     const [countFn, setCount] = useState(0);
 
     const handleIncrement = () => {
-        if (countFn > 0) {
-            setCount((countFn) => ++countFn);
-        } else {
-            alert("Count cannot be negative.");
-        }
+        setCount((countFn) => ++countFn);
     };
 
     const handleDecrement = () => {
